@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset='UTF-8'><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+<style>
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+#imgtitle {margin: 0; position: absolute; top: 10%; left: 50%; transform: translate(-50%, 0%);}
+#app {margin: 0; position: absolute; top: 80%; left: 50%; transform: translate(-80%, -50%);}
+</style></head><body>
+<div id="imgtitle">
+  <img src="pikachu.png"></img>
+</div>
+<div id="app">
+        <!-- Webamp will attempt to center itself within this div -->
+</div>
+<script src="webamp.bundle.1.5.0.js"></script>
+<script>
+ var JSFiles = ['halo.playlist.js','master.playlist.js','n64.playlist.js']; // put all the possible JS files to load.
+ function randomJS() {
+     // pick a random file from the list in JSFiles
+     var index = Math.floor(Math.random()*JSFiles.length); 
+
+     // Append JS file to head section.
+     var script = document.createElement('script');
+     script.src = JSFiles[index];
+     document.getElementsByTagName('head')[0].appendChild(script);
+ };
+</script>
+<body onload="randomJS();">
+</body></html>
